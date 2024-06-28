@@ -1,0 +1,42 @@
+﻿@model OfferViewModel
+
+@{
+    ViewData["Title"] = "Add";
+}
+<div class="container-fluid d-flex tender-parent  mt-10">
+    <div class="text-center tender">
+    <h1 class="tender-header">Add New Offer</h1>
+        <hr />
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-action="Add">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group ">
+                        <input asp-for="TID" type="hidden" value="@Model.TID" />
+                        <span asp-validation-for="TID" class="text-danger error"></span>
+                    </div>
+                    <div class="form-group space">
+                        <label asp-for="VendorId" class="control-label error"></label>
+                        <select asp-for="VendorId" class="form-control" asp-items="@Model.Vendors">
+                            <option value="">select Vendor</option>
+                        </select>
+                        <span asp-validation-for="VendorId" class="text-danger error"></span>
+                    </div>
+                    <div class="form-group space">
+                        <label asp-for="CreateOn" class="control-label error"></label>
+                        <input asp-for="CreateOn" class="form-control" type="date" placeholder="MM/DD/YYYY" />
+                        <span asp-validation-for="CreateOn" class="text-danger error"></span>
+                    </div>
+                    <div class="form-group d-flex justify-content-end space">
+                        <a asp-action="index" asp-controller="home" class="btn btn-primary m-1">Cancel</a>
+                        <input type="submit" value="Next" class="btn btn-primary m-1" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

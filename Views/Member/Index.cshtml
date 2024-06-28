@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Member>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@{
+    int rowIndex = 0;
+}
+
+<div class="container-fluid tender-parent text-center  mt-10">
+    <h1 class="tender-header">  <i class="fa-solid fa-arrow-right"></i> Covenants Holders </h1>
+    <div class="tenderTable container">
+        <partial name="SearchPartionView" /> 
+        <div class="row text-center">
+            <div class="col-md-12">
+                <table class="table table-bordered" cellspacing="0" cellpadding="0">
+                    <thead>
+                        <tr class="table-pramiry tender-table">
+                            <th></th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+                            <th>Phone Number</th>
+                            <th></th>
+                            <th>Return Covenant</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            rowIndex++;
+                            <tr class="@(rowIndex % 2 == 0 ?   "even-table" : "odd-table" )">
+                                <td>@rowIndex</td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>@item.PhoneNumber</td>
+                                <td><a asp-action="Details" asp-route-id="@item.Id" class="btn btn-light">Details</a></td>
+                                <td><a class="btn btn-dark" asp-action="ReturnCovenant" 
+                                    asp-controller="CovenantItem" 
+                                    asp-route-id="@item.Id" onclick="if(!confirm(' are  u sure ?! you want to return @item.Name /'s Covenant')){return false} ">
+                                    Click</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

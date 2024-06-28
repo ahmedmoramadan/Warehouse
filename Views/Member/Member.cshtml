@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Member>
+
+@{
+    ViewData["Title"] = "Member";
+}
+
+@{
+    int rowIndex = 0;
+}
+
+<div class="container-fluid tender-parent text-center  mt-10">
+    <partial name="MemberSearchPartialView" />
+    <h1 class="tender-header">
+        <i class="fa-solid fa-arrow-right"></i>
+        All Members
+    </h1>
+    <div class="form-group d-flex justify-content-end mb-2">
+        <div class="form-group">
+            <a asp-action="Add" asp-controller="member" class="btn btn-primary mx-2"> <i class="bi bi-plus-circle "></i> Add PMember</a>
+        </div>
+        <div class="form-group">
+            <a asp-action="AddgeneralMember" asp-controller="member" class="btn btn-primary "> <i class="bi bi-plus-circle"></i> Add  GMember</a>
+        </div>
+    </div>
+    <div class="tenderTable container">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <table class="table table-bordered align-items-center" cellspacing="0" cellpadding="0">
+                    <thead>
+                        <tr class="table-pramiry tender-table">
+                            <th></th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+                            <th>Phone Number</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            rowIndex++;
+                            <tr class="@(rowIndex % 2 == 0 ?   "even-table" : "odd-table" )">
+                                <td>@rowIndex</td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>@item.PhoneNumber</td>
+                                <td class="d-flex justify-content-end">
+                                    @if (item.Password == null)
+                                    {
+                                        <a asp-action="EditGeneralMember" asp-controller="Member" asp-route-id="@item.Id" class="btn btn-success mx-2"><i class="bi bi-pen"></i></a>
+                                    }
+                                    else
+                                    {
+                                        <a asp-action="EditMember" asp-controller="Member" asp-route-id="@item.Id" class="btn btn-success mx-2"><i class="bi bi-pen"></i></a>
+                                    }
+                                    | <a asp-action="Delete" asp-controller="Member" asp-route-id="@item.Id" class="btn btn-danger mx-2"><i class="bi bi-trash3"></i></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

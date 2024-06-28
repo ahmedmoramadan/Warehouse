@@ -1,0 +1,51 @@
+﻿@model CovenantViewModel
+
+@{
+    ViewData["Title"] = "Add";
+}
+
+
+<div class="container-fluid d-flex tender-parent  mt-10">
+    <div class="text-center tender">
+        <h1 class="tender-header">Add Covenant to Member </h1>
+        <hr />
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-action="Add">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div>
+                        <label asp-for="MemberId" class="form-label error"></label>
+                        <select asp-for="MemberId" class="form-select error" asp-items="Model.Memebers"
+                                data-placeholder="Select member">
+                            <option></option>
+                        </select>
+                        <span asp-validation-for="MemberId" class="text-danger error"></span>
+                    </div>
+                    <div>
+                        <label asp-for="SelectItem" class="form-label error"></label>
+                        <select asp-for="SelectItem" class="form-select error" asp-items="Model.StoreItems"
+                                data-placeholder="Select Item">
+                            <option></option>
+                        </select>
+                        <span asp-validation-for="SelectItem" class="text-danger error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="QTY" class="control-label error"></label>
+                        <input asp-for="QTY" class="form-control" />
+                        <span asp-validation-for="QTY" class="text-danger error"></span>
+                    </div>
+                    <div class="form-group d-flex justify-content-end ">
+                        <a asp-action="" asp-controller="" class="btn btn-danger m-1">Cancel</a>
+                        <input type="submit" value="Save" class="btn btn-primary m-1" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

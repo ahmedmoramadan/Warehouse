@@ -1,0 +1,28 @@
+﻿ @model Offer
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div class="tender-parent">
+    <div class="container">
+
+        <h3 class="fw-bold "> <i class="fa-solid fa-arrow-right"></i> <b>Vendor</b> : @Model.Vendor.Name</h3>
+        <dl class="row gap-3">
+            @foreach (var i in Model.RequiredItems)
+            {
+                <a class="offer-item col-12 col-sm-5 col-md-4 col-lg-3" asp-action="ChooseAcceptItem" asp-controller="AcceptItem" asp-route-RQId="@i.RequiredItem.Id" asp-route-OId="@Model.id">
+                <dd>
+                    <p class="text-center fw-bold fs-3"><b>@i.RequiredItem.Name</b></p>
+                    <p>Type : <b> @i.RequiredItem.Type</b></p>
+                    <p>Desc : <b>@i.RequiredItem.Description</b></p>
+                    <p>Prie : <b>@i.RequiredItem.InitialPrice</b></p>
+
+                </dd>
+                </a>
+            }
+        </dl>
+    </div>
+</div>
+

@@ -1,0 +1,12 @@
+﻿global using Microsoft.EntityFrameworkCore;
+global using WarehouseProject.Data;
+global using WarehouseProject.Models;
+global using WarehouseProject.ViewModels;
+global using WarehouseProject.Service;
+global using Microsoft.AspNetCore.Mvc.Rendering;
+global using Microsoft.AspNetCore.Mvc;
+global using System.Diagnostics;
+global using System.ComponentModel.DataAnnotations;
+global using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor;
+global using Microsoft.AspNetCore.Identity;
+global using Microsoft.AspNetCore.Authorization;

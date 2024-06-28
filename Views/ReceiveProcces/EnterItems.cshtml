@@ -1,0 +1,51 @@
+﻿@model ReceiveItemViewModel
+
+@{
+    ViewData["Title"] = "EnterItems";
+}
+<div class="container-fluid d-flex tender-parent  mt-10">
+    <div class="text-center tender px-3">
+        <h1 class="tender-header">Enter The Items</h1>
+        <hr />
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-action="EnterItems">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label error"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Type" class="control-label error"></label>
+                        <input asp-for="Type" class="form-control" />
+                        <span asp-validation-for="Type" class="text-danger error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Description" class="control-label error"></label>
+                        <input asp-for="Description" class="form-control" />
+                        <span asp-validation-for="Description" class="text-danger error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Quantity" class="control-label error"></label>
+                        <input asp-for="Quantity" class="form-control" />
+                        <span asp-validation-for="Quantity" class="text-danger error"></span>
+                    </div>
+                    <div class="form-group d-flex justify-content-end pt-2">
+                        <a onclick="if(!confirm('are you sure u want to delete it !?')){return false}"
+                            class="btn btn-danger m-1" asp-action="Delete">Cancel</a>
+                        <a asp-action="index" asp-controller="Home" class="btn btn-success m-1"> OK </a>
+                        <input type="submit" value="EnterItem" class="btn btn-success m-1" />
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

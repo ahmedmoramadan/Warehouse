@@ -1,0 +1,58 @@
+﻿@model IEnumerable<AlternativeItem>
+
+@{
+    ViewData["Title"] = "AccptedItems";
+}
+@{
+    int rowIndex = 0;
+}
+
+<div class="container-fluid tender-parent text-center  mt-10">
+    <h1 class="tender-header space"><i class="fa-solid fa-arrow-right"></i>The Accept Items</h1>
+    <div class="tenderTable container">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <table class="table table-bordered" cellspacing="0" cellpadding="0">
+                    <thead>
+                        <tr class="table-pramiry tender-table">
+                            <th></th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Description)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Type)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Price)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            rowIndex++;
+                            <tr>
+                                <td>@rowIndex</td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Type)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Price)
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

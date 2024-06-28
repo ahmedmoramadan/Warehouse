@@ -1,0 +1,39 @@
+﻿@model CommitteeEXCViewModel
+
+@{
+    ViewData["Title"] = "SelectEXCCommitteemembers";
+}
+
+<div class="container-fluid d-flex tender-parent  mt-10">
+    <div class="text-center tender">
+        <h1 class="tender-header">Determin Committees Members</h1>
+        <hr />
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-action="SelectEXCCommitteemembers">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div>
+                        <label asp-for="SelectEXCMembers" class="form-label error"></label>
+                        <select multiple="" asp-for="SelectEXCMembers" class="form-select error" asp-items="Model.Memebers"
+                                data-placeholder="Select Expire Committee members">
+                            <option></option>
+                        </select>
+                        <span asp-validation-for="SelectEXCMembers" class="text-danger error"></span>
+                    </div>
+                    <br />
+                    <div class="form-group d-flex justify-content-end ">
+                        <a asp-action="" asp-controller="" class="btn btn-primary m-1">Cancel</a>
+                        <input type="submit" value="Okay" class="btn btn-primary m-1" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

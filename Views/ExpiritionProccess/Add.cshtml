@@ -1,0 +1,36 @@
+﻿@model ExpiritionProcces
+
+@{
+    ViewData["Title"] = "Add";
+}
+
+
+<div class="container-fluid d-flex tender-parent  mt-10">
+    <div class="text-center tender">
+        <h1 class="tender-header">Date for Receive Items</h1>
+        <hr />
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-action="Add">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Createon" class="control-label error"></label>
+                        <input asp-for="Createon" class="form-control mb-2" type="date" placeholder="MM/DD/YYYY" />
+                        <span asp-validation-for="Createon" class="text-danger error"></span>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                        <input type="submit" class="btn btn-primary mx-2" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

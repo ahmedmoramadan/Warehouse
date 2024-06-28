@@ -1,0 +1,60 @@
+﻿@model AlternativeItemViewModel
+@{
+    ViewData["Title"] = "AddAlternativeItems";
+}
+<div class="container-fluid d-flex tender-parent  mt-10">
+    <div class="text-center tender">
+    <h1 class="tender-header"> Add Alternative Item</h1> 
+        <hr />
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-action="Add">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        @* <label asp-for="RequiredItemId"  class="control-label error"></label> *@
+                        <input asp-for="RequiredItemId" type="hidden" class="form-control" />
+                       @* <span asp-validation-for="Name" class="text-danger error"></span> *@
+                    </div>
+                    <div class="form-group">
+                        @* <label asp-for="RequiredItemId"  class="control-label error"></label> *@
+                        <input asp-for="TID" type="hidden" class="form-control" />
+                        @* <span asp-validation-for="Name" class="text-danger error"></span> *@
+                    </div>
+                    <div class="form-group space">
+                        <label asp-for="Name" class="control-label error"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger error"></span>
+                    </div>
+                    <div class="form-group space">
+                        <label asp-for="Description" class="control-label error"></label>
+                        <textarea asp-for="Description" class="form-control error" placeholder="Enter Description " rows="3"></textarea>
+                        <span asp-validation-for="Description" class="text-danger error"></span>
+                    </div>
+                    <div class="form-group space">
+                        <label asp-for="Type" class="control-label error"></label>
+                        <input asp-for="Type" class="form-control" />
+                        <span asp-validation-for="Type" class="text-danger error"></span>
+                    </div>
+                    <div class="form-group space">
+                        <label asp-for="Price" class="control-label error"></label>
+                        <input asp-for="Price" class="form-control" />
+                        <span asp-validation-for="Price" class="text-danger error"></span>
+                    </div>
+                    <div class="form-group d-flex justify-content-end space">
+                        <a asp-action="Add" asp-controller="Offer" class="btn btn-primary mx-2" asp-route-id="@Model.TID">Add new Offer</a>
+                        <a asp-action="ValidItems" asp-controller="RequiredItem" asp-route-id="@Model.TID" class="btn btn-primary mx-2">Done</a>
+                        <input type="submit" value="AddItem" class="btn btn-primary " />
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br />
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script src="~/js/pricevalidtion.js"></script>
+}

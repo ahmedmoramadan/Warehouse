@@ -1,0 +1,37 @@
+﻿@model tendernameViewModel
+
+@{
+    ViewData["Title"] = "Tendername";
+}
+
+<div class="container-fluid d-flex tender-parent  mt-10">
+    <div class="text-center tender">
+        <h1 class="tender-header">Enter Tender Name </h1>
+        <hr />
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-action="Tendername">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group ">
+                        <label asp-for="TenderName" class="control-label error"></label>
+                        <input asp-for="TenderName" class="form-control" placeholder="Record New Item" />
+                        <span asp-validation-for="TenderName" class="text-danger error"></span>
+                    </div>
+                    <br />
+                    <div class="form-group d-flex justify-content-end">
+                        <input type="submit" value="submit" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br />
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+

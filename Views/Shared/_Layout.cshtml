@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] | WarehouseProject</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/css/bootstrap.min (4).css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="~/lib/select2/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="~/css/layout.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WarehouseProject.styles.css" asp-append-version="true" />
+</head>
+<body>
+
+    <div class="">
+        <main role="main" class="row mainlayout">
+            <header class="col-lg-2 col-4 sideBar">
+                <div class="container">
+                    <div class="logo">
+                        <img src="~/favicon.ico" alt="Logo Icon" />
+                    </div>
+                    <div class="links">
+                        <ul>
+                            @* @if (!User.Identity!.IsAuthenticated) *@
+                           @* {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" href="#">W and P Managment</a>
+                                </li>
+                            } *@
+                            @if (User.Identity!.IsAuthenticated)
+                            {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home"
+                                   asp-action="Index">W and P Managment</a>
+                            </li>
+                                @if (User.IsInRole("Purchases_Manager") || User.IsInRole("Header")) //ok
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Tender"
+                                        asp-action="EntityName" asp-route-id="0">ON-GOING TENDERS</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Tender"
+                                        asp-action="EntityName" asp-route-id="1">Ended Tender</a>
+                                    </li>
+                                    @if (User.IsInRole("Purchases_Manager"))
+                                    {
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" asp-area="" asp-controller="Tender"
+                                            asp-action="CreateTender">Create Tender</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" asp-area="" asp-controller="Tender"
+                                            asp-action="index">
+                                                Show Tender
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" asp-area="" asp-controller="Member"
+                                            asp-action="Member">Members</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" asp-area="" asp-controller="Vendor"
+                                            asp-action="index">Vendors</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" asp-area="" asp-controller="Tender"
+                                            asp-action="Tendername">Add Offer</a>
+                                        </li>
+
+                                    } //ok
+                                }
+                                @if (User.IsInRole("Specification_Head"))
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Tender"
+                                           asp-action="Tendername">DeterminSP&PR</a>
+                                    </li>
+                                }
+                                @if (User.IsInRole("Selection_Head"))
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Tender"
+                                        asp-action="Tendername">Offer</a>
+                                    </li>
+                                }
+                                @*menu when i click it open hidden value*@
+                                @if (User.IsInRole("Technical_Head"))
+                                {
+                                    <li class="accordion accordtion-sidebar accordion-flush" id="accordionFlushExample1">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header  nav-item" id="flush-headingTwo">
+                                                <button class="accordion-button p-0 py-2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                                    Item
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapseTwo" class="accordion-collapse collapse m-0 p-0" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample1">
+                                                <div class="accordion-body p-0">
+                                                    <ul class="p-0">
+                                                        <li class="nav-item">
+                                                            <a class="nav-link text-dark" asp-area="" asp-controller="Tender"
+                                                               asp-action="Tendername"> choose Valid Item </a>
+                                                        </li>
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                }
+                            }
+                            @if (User.IsInRole("Warehouse_manager"))//ok
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="ReceiveProcces"
+                                       asp-action="Add">Receive Procces </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Committee"
+                                       asp-action="SelectSTCCommitteemembers">SElectSTCommitte</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="ReceiveProcces"
+                                       asp-action="ItemStore"> Store Items </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="CovenantItem"
+                                       asp-action="Add"> Add Covenant </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Member"
+                                       asp-action="">Covenant Holders </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="ExpiritionProccess"
+                                       asp-action="Add"> SelectEXCCommittee </a>
+                                </li>
+                               
+                                
+                            }
+                            @if (User.IsInRole("Recive_Head"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="ReceiveProcces"
+                                       asp-action="EnterItems">Enter Items </a>
+                                </li>
+                            }
+                            @if (User.IsInRole("SpecificationTechnical_Head"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="ReceiveProcces"
+                                       asp-action="SelectValid">convant holders </a>
+                                </li>
+                            }
+                            @if (User.IsInRole("Expire_Head"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="member"
+                                       asp-action="">Select Valid </a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            <div class="col-lg-10 col-8">
+                <header class="main-header">
+                    <ul class="navbar-nav flex-grow-1">
+                        @if (User.Identity!.IsAuthenticated == true)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><b><i class="bi bi-person-circle"></i> @User.Identity.Name</b></a>
+                            </li>
+                            @if (User.IsInRole("Warehouse_manager") || User.IsInRole("Purchases_Manager"))
+                            {
+                                <li class="nav-item fw-bold">
+                                    <a class="nav-link  btn-lg" asp-controller="Account" asp-action="LogoutManager">Logout</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="nav-item fw-bold">
+                                    <a class="nav-link " asp-controller="Account" asp-action="Logout">Logout</a>
+                                </li>
+                            }
+                        }
+                        else
+                        {
+                            <li class="nav-item fw-bold">
+                                <a class="nav-link" asp-area="" asp-controller="Account"
+                                   asp-action="Login">Login</a>
+                            </li>
+                        }
+                    </ul>
+                </header>
+                <div class="renderedBody">
+                    @RenderBody()
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - WarehouseProject - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/select2/js/select2.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,315 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = WarehouseProject
+build_property.RootNamespace = WarehouseProject
+build_property.ProjectDir = D:\Project\WarehouseProject\WarehouseProject\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\Project\WarehouseProject\WarehouseProject
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/AcceptItem/ChooseAcceptItem.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXB0SXRlbVxDaG9vc2VBY2NlcHRJdGVtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/AcceptItem/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXB0SXRlbVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/AcceptItem/UpdateAccepted.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXB0SXRlbVxVcGRhdGVBY2NlcHRlZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/AcceptItem/UpdateIsAccept.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXB0SXRlbVxVcGRhdGVJc0FjY2VwdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Account/Login1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbjEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/AlternativeItem/AccptedItems.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx0ZXJuYXRpdmVJdGVtXEFjY3B0ZWRJdGVtcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/AlternativeItem/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx0ZXJuYXRpdmVJdGVtXEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Committee/EditSLC.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWl0dGVlXEVkaXRTTEMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Committee/EditSPC.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWl0dGVlXEVkaXRTUEMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Committee/EditTEC.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWl0dGVlXEVkaXRURUMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Committee/LastEXCMembers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWl0dGVlXExhc3RFWENNZW1iZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Committee/LastRCCMembers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWl0dGVlXExhc3RSQ0NNZW1iZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Committee/LastSLCMembers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWl0dGVlXExhc3RTTENNZW1iZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Committee/LastSPCMembers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWl0dGVlXExhc3RTUENNZW1iZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Committee/LastSTCMembers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWl0dGVlXExhc3RTVENNZW1iZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Committee/LastTECMembers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWl0dGVlXExhc3RURUNNZW1iZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Committee/SelectEXCCommitteemembers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWl0dGVlXFNlbGVjdEVYQ0NvbW1pdHRlZW1lbWJlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Committee/SelectRCCCommitteemembers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWl0dGVlXFNlbGVjdFJDQ0NvbW1pdHRlZW1lbWJlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Committee/SelectSLCCommitteemembers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWl0dGVlXFNlbGVjdFNMQ0NvbW1pdHRlZW1lbWJlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Committee/SelectSPCCommitteemembers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWl0dGVlXFNlbGVjdFNQQ0NvbW1pdHRlZW1lbWJlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Committee/SelectSTCCommitteemembers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWl0dGVlXFNlbGVjdFNUQ0NvbW1pdHRlZW1lbWJlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Committee/SelectTECCommitteemembers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWl0dGVlXFNlbGVjdFRFQ0NvbW1pdHRlZW1lbWJlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Committee/_CommitteePartialView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWl0dGVlXF9Db21taXR0ZWVQYXJ0aWFsVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/CovenantItem/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ292ZW5hbnRJdGVtXEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/ExpiritionProccess/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwaXJpdGlvblByb2NjZXNzXEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/ExpiritionProccess/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwaXJpdGlvblByb2NjZXNzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Member/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Member/AddGeneralMember.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXEFkZEdlbmVyYWxNZW1iZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Member/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Member/EditGeneralMember.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXEVkaXRHZW5lcmFsTWVtYmVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Member/EditMember.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXEVkaXRNZW1iZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Member/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Member/Member.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXE1lbWJlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Member/Search1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXFNlYXJjaDEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Offer/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2ZmZXJcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Offer/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2ZmZXJcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Offer/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2ZmZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/ReceiveProcces/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZWl2ZVByb2NjZXNcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/ReceiveProcces/EnterItems.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZWl2ZVByb2NjZXNcRW50ZXJJdGVtcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/ReceiveProcces/ItemStore.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZWl2ZVByb2NjZXNcSXRlbVN0b3JlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/ReceiveProcces/SelectValid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZWl2ZVByb2NjZXNcU2VsZWN0VmFsaWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/RequiredItem/AddNeededItem.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWlyZWRJdGVtXEFkZE5lZWRlZEl0ZW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/RequiredItem/ChooseValidItem.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWlyZWRJdGVtXENob29zZVZhbGlkSXRlbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/RequiredItem/ChooseValidItems.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWlyZWRJdGVtXENob29zZVZhbGlkSXRlbXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/RequiredItem/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWlyZWRJdGVtXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/RequiredItem/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWlyZWRJdGVtXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/RequiredItem/TheValidItems.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWlyZWRJdGVtXFRoZVZhbGlkSXRlbXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/RequiredItem/ValidItems.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWlyZWRJdGVtXFZhbGlkSXRlbXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Shared/MemberSearchPartialView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE1lbWJlclNlYXJjaFBhcnRpYWxWaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Shared/NotDataFoundPartialView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE5vdERhdGFGb3VuZFBhcnRpYWxWaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Shared/SearchPartionView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFNlYXJjaFBhcnRpb25WaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Shared/successfullyView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXHN1Y2Nlc3NmdWxseVZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Tender/CreateTender.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVuZGVyXENyZWF0ZVRlbmRlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Tender/DashBoard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVuZGVyXERhc2hCb2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Tender/DashBoard2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVuZGVyXERhc2hCb2FyZDIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Tender/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVuZGVyXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Tender/EntityName.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVuZGVyXEVudGl0eU5hbWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Tender/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVuZGVyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Tender/TenderDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVuZGVyXFRlbmRlckRldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Tender/Tendername.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVuZGVyXFRlbmRlcm5hbWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Vendor/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVuZG9yXEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Vendor/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVuZG9yXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Vendor/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVuZG9yXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/WarehouseProject/WarehouseProject/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-xenjdpc324

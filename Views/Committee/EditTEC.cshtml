@@ -1,0 +1,40 @@
+﻿@model EditCommitteeTECViewModel
+
+@{
+    ViewData["Title"] = "EditTEC";
+}
+<h1>EditTEC</h1>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="EditTEC">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div>
+                <div class="form-group ">
+                    <input asp-for="TID" type="hidden" value="@Model.TID" />
+                    <span asp-validation-for="TID" class="text-danger error"></span>
+                </div>
+                <label asp-for="SelectTECMembers" class="form-label error"></label>
+                <select multiple="" asp-for="SelectTECMembers" class="form-select error" asp-items="Model.Memebers"
+                        data-placeholder="Select Technical Committee members">
+                    <option></option>
+                </select>
+                <span asp-validation-for="SelectTECMembers" class="text-danger error"></span>
+            </div>
+            <br />
+            <div class="form-group d-flex justify-content-end ">
+                <a asp-action="" asp-controller="" class="btn btn-primary m-1">Cancel</a>
+                <input type="submit" value="Okay" class="btn btn-primary m-1" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,28 @@
+﻿@model DBViewModel
+@{
+    ViewData["Title"] = "EntityName";
+}
+
+
+<div class="container-fluid d-flex tender-parent  mt-10">
+    <div class="text-center tender">
+        <h1 class="tender-header"> <i class="fa-solid fa-arrow-right"></i>Select Entity</h1>
+        <hr />
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-action="EntityName">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <label asp-for="EntityId" class="control-label error">Entity</label>
+                    <select asp-for="EntityId" class="form-control" asp-items="@Model.SelectEntitie">
+                        <option value="0">All Entities</option>
+                    </select>
+                    <span asp-validation-for="EntityId" class="text-danger error"></span>
+                    <div class="form-group d-flex justify-content-end space">
+                        <a asp-action="Index" asp-controller="Home" class="btn btn-danger mx-2">Cancel</a>
+                        <input type="submit" value="Next" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+﻿@model TenderViewModel
+
+@{
+    ViewData["Title"] = "CreateTender";
+}
+<div class="container-fluid d-flex tender-parent  mt-10">
+    <div class="text-center tender">
+    <h1 class="tender-header"> <i class="fa-solid fa-arrow-right"></i>Create New Tender</h1>
+        <hr />
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-action="CreateTender">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Title" class="control-label error"></label>
+                        <input asp-for="Title" class="form-control" placeholder="Enter Title" />
+                        <span asp-validation-for="Title" class="text-danger error"></span>
+                    </div>
+                    <br />
+                    <div>
+                        <label asp-for="Description" class="control-label error"></label>
+                        <textarea asp-for="Description" class="form-control" placeholder="Enter Description " rows="3"></textarea>
+                        <span asp-validation-for="Description" class="text-danger error"></span>
+                    </div>
+                    <div class="form-group mt-5">
+                        <label asp-for="EntityId" class="control-label error">Entity</label>
+                        <select asp-for="EntityId" class="form-control" asp-items="@Model.SelectEntitie">
+                            <option value="">select Vendor</option>
+                        </select>
+                        <span asp-validation-for="EntityId" class="text-danger error"></span>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <label asp-for="DateOnly" class="control-label error"></label>
+                        <input asp-for="DateOnly" class="form-control" type="date" placeholder="MM/DD/YYYY" />
+                        <span asp-validation-for="DateOnly" class="text-danger error"></span>
+                    </div>
+                    <br />
+                    <div class="form-group d-flex justify-content-end">
+                        <a asp-action="Index" asp-controller="Home" class="btn btn-danger mx-2" >Cancel</a>
+                        <input type="submit" value="Next" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

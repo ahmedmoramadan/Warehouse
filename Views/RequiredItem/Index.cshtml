@@ -1,0 +1,116 @@
+﻿@model IEnumerable<RequiredItem>
+
+@{
+    ViewData["Title"] = "Index";
+}
+@{
+    int rowIndex = 0;
+    int rowIndex5 = 0;
+    int c = 0;
+}
+
+@if (Model != null && Model.Any())
+{
+    <div class="container-fluid tender-parent text-center  mt-10">
+        <h3 class="tender-header">Determine Specification and price for  Item</h3>
+        <div class="form-group d-flex justify-content-end ">
+            <a asp-action="Index" asp-controller="Home" class="btn btn-primary">Done</a>
+        </div>
+        <div class="tenderTable container">
+            <h3 class="tender-header mt-2 mb-0 text-start"><b>Tender Number : </b> @Model.FirstOrDefault()!.TenderId</h3>
+            <br />
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <table class="table table-bordered" cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr class="table-primary">
+                                <th>
+                                    Item Name
+                                </th>
+
+                                <th>D_Price&specification</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr class="@(rowIndex % 2 == 0 ?  "odd-table" : "even-table")">
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                    </td>
+                                    <td>
+                                        @if (@item.Description == null)
+                                        {
+                                            <a asp-action="Edit" asp-route-id="@item.Id" asp-route-Tid="@item.TenderId" class="btn btn-light"> DSCNI </a>
+                                        }
+                                        else
+                                        {
+                                            c++;
+                                            <p><b style="font:22px;">Done</b></p>
+                                        }
+
+                                    </td>
+                                    <td>
+                                        @if (@item.Description != null)
+                                        {
+                                            <a asp-action="Edit" asp-route-id="@item.Id" asp-route-Tid="@item.TenderId" class="btn btn-success"> Edit </a>
+                                        }
+                                    </td>
+                                </tr>
+                                rowIndex++;
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    
+    <br />
+    @if (c > 0)
+    {
+        @* <div class="container-fluid tender-parent text-center  mt-10"> *@
+            <h3 class="tender-header">After Determine Specification and price for  Item</h3>
+            <div class="tenderTable container">
+                <div class="tst space">
+                    <table class="table table-bordered" cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr class="table-primary">
+                                <th></th>
+                                <th>Item Name</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                                <th>InitialPrice</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                if (item.Description != null)
+                                {
+                                    rowIndex5++;
+                                    <tr class="@(rowIndex5 % 2 == 0 ?  "odd-table" : "even-table")">
+                                        <td>@rowIndex5</td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                    </td>
+                                    <td>@item.Description</td>
+                                    <td>@item.Type</td>
+                                    <td>@item.InitialPrice</td>
+                                </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        
+    }
+    </div>
+}
+else
+{
+    <partial name="NotDataFoundPartialView" />
+}
+

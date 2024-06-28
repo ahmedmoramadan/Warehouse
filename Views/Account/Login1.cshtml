@@ -1,0 +1,52 @@
+﻿@model LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container-fluid login-page d-flex">
+                    <form asp-action="Login" asp-controller="Account">
+    <div class="wave-login">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#0099ff" fill-opacity="1" d="M0,192L48,208C96,224,192,256,288,240C384,224,480,160,576,144C672,128,768,160,864,170.7C960,181,1056,171,1152,165.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+    </div>
+    <div class="container">
+        <div class="row" style="margin-bottom:100px;">
+            <div class="col-lg-6 col-md-12 login-col">
+                <h1 class="login-header">Welcome To Our System</h1>
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                    .
+                </p>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class=" login-form">
+                    <h2 class="text-center">Login Page</h2>
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="UserName" class="control-label error"></label>
+                            <input asp-for="UserName" class="form-control" />
+                            <span asp-validation-for="UserName" class="text-danger error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="password" class="control-label error"></label>
+                            <input asp-for="password" class="form-control" />
+                            <span asp-validation-for="password" class="text-danger error"></span>
+                        </div>
+                        <div class="form-group d-flex justify-content-end space">
+                            <input type="submit" value="Login" class="btn btn-primary" />
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

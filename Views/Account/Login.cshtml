@@ -1,0 +1,53 @@
+﻿@model LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container-fluid login-page d-flex">
+    <div class="container">
+        <div class="row" style="margin-bottom:100px;">
+            <div class="col-lg-6 col-md-12 login-col">
+                <h1 class="login-header">
+                    <i class="fa-solid fa-arrow-right"></i>
+                    Welcome To Our System
+                </h1>
+                <p>
+                    The university's procurement system manages bids for needed items,
+                    evaluating proposals from suppliers to select the best offer. 
+                    A committee oversees item receipt and distribution to departments, 
+                    with provisions for returns or adjustments as necessary,
+                    ensuring efficient asset management.
+                </p>
+            </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="login-form">
+                    <h2 class="text-center tender-header">Login Page</h2>
+                        <hr />
+                        <form asp-action="Login" asp-controller="Account">
+                            <div asp-validation-summary="All" class="text-danger"></div>
+                            <div class="form-group space">
+                                <label asp-for="UserName" class="control-label error"></label>
+                                <input asp-for="UserName" class="form-control" />
+                                <span asp-validation-for="UserName" class="text-danger error"></span>
+                            </div>
+                            <div class="form-group space">
+                                <label asp-for="password" class="control-label error"></label>
+                                <input asp-for="password" class="form-control" />
+                                <span asp-validation-for="password" class="text-danger error"></span>
+                            </div>
+                            <div class="form-group d-flex justify-content-end space">
+                                <input type="submit" value="Login" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,66 @@
+﻿@model ReceiveItemIsValidViewModel
+
+@{
+    ViewData["Title"] = "ISValid";
+}
+@{
+    int rowIndex = 0;
+}
+@if (Model != null && Model.checkValid.Any())
+{ 
+
+<div class="container-fluid tender-parent text-center  mt-10">
+        <h1 class="tender-header">  <i class="fa-solid fa-arrow-right"></i>Choose Valid From ReceiveItem</h1>
+        <div class="tenderTable container">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <form asp-action="SelectValid">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <table class="table table-bordered" cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr class="table-primary">
+                                <th>Item Name</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                                <th>IsValid?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var i in Model.checkValid)
+                            {
+                                    <tr class="@(rowIndex % 2 == 0 ?  "odd-table" : "even-table")">
+                                    <td>@i.Name</td>
+                                    <td>@i.Description</td>
+                                    <td>@i.Type</td>
+                                    <td>
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               value="@i.Id"
+                                               name="uniqueName"
+                                               id="checkbox_@i.Id"
+                                               checked="@i.IsValid" />
+                                    </td>
+                                </tr>
+                                    rowIndex++;
+                            }
+                        </tbody>
+                    </table>
+                    <div class="form-group d-flex justify-content-end space">
+                        <a asp-action="" asp-controller="" class="btn btn-danger m-1">Cancel</a>
+                        <input type="submit" value="Choose" class="btn btn-primary m-1" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+}
+else
+{
+    <partial name="NotDataFoundPartialView" />
+}

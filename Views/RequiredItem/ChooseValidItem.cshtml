@@ -1,0 +1,93 @@
+﻿ @model IEnumerable<RequiredItem>
+
+@{
+    ViewData["Title"] = "ChooseValidItem";
+}
+@{
+    int rowIndex = 0;
+}
+@if (Model != null && Model.Any())
+{
+    @if (Model.All(row => !string.IsNullOrWhiteSpace(row.Description)))
+    {
+        <div class="container-fluid tender-parent text-center  mt-10">
+            <h1 class="tender-header">  <i class="fa-solid fa-arrow-right"></i>Choose Valid Items </h1>
+            <div class="tenderTable container">
+                <br />
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <table class="table table-bordered" cellspacing="0" cellpadding="0">
+                            <thead>
+                                <tr class="table-primary">
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Name)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Description)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Type)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.InitialPrice)
+                                    </th>
+                                    <th>IsValid?</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr class="@(rowIndex % 2 == 0 ?  "odd-table" : "even-table")">
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Description)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Type)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.InitialPrice)
+                                        </td>
+                                        <td>
+
+                                            <div>
+                                                <a class="btn btn-info" asp-action="EditValidation" asp-route-id="@item.Id" onclick="if(!confirm(' are  u sure ! ')){return false} ">Yes</a> |
+                                                <a class="btn btn-info">No</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    rowIndex++;
+                                }
+                            </tbody>
+                        </table>
+                        <div class="form-group d-flex justify-content-end ">
+                            <a asp-action="" asp-controller="" class="btn btn-primary">Done</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="container-fluid d-flex .warning text-center ">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <div class="alert alert-dismissible alert-warning SpaceWarning">
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            <h4 class="alert-heading">Warning!</h4>
+                            <p style="direction:rtl"> لم يتم تحديد العناصر بعد... او لم يتم تحديد المواصفات لجميع العناصر بعد.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>       
+    }
+} 
+else
+{
+    <partial name="NotDataFoundPartialView" />
+} 

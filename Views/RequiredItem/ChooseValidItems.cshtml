@@ -1,0 +1,61 @@
+﻿@model ChooseValidTViewModel
+
+@{
+    ViewData["Title"] = "ChooseValidItems";
+}
+
+@{
+    int rowIndex = 0;
+}
+<div class="container-fluid tender-parent text-center  mt-10">
+    <h1 class="tender-header"> <i class="fa-solid fa-arrow-right"></i> Choose the Valid Items</h1>
+    <div class="tenderTable container">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <form asp-action="ChooseValidItems">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group ">
+                        <input asp-for="Tid" type="hidden" value="@Model.Tid" />
+                        <span asp-validation-for="Tid" class="text-danger error"></span>
+                    </div>
+                    <table class="table table-bordered" cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr class="table-pramiry tender-table">
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>InitialPrice</th>
+                                <th>IsValid?</th>
+                            </tr>
+                        </thead>
+                        @foreach (var i in Model.CheckValid)
+                        {
+                            <tr class="@(rowIndex % 2 == 0 ?   "odd-table" : "even-table" )">
+                                <td>@i.Name</td>
+                                <td>@i.Type</td>
+                                <td>@i.InitialPrice</td>
+                                <td>
+                                    <input type="checkbox"
+                                           class="item-checkbox"
+                                           value="@i.Id"
+                                           name="uniqueid"
+                                           checked="@i.IsValid" />
+                                </td>
+                            </tr>
+                            rowIndex++;
+                        }
+                    </table>
+                    <div class="form-group d-flex justify-content-end ">
+                        <a class="btn btn-danger mx-2" asp-action="" asp-controller="">Cancel</a>
+                        <input type="submit" value="Choose" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,137 @@
+﻿:root {
+    --main-color: #e0e2db73;
+    --second-color: #D2D4C8;
+    --border-color: #5F7470;
+}
+
+.container-fluid{
+    flex-direction:column;
+}
+
+.row.mainlayout > * {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+
+
+.sideBar {
+    height: calc(100vh - 62px);
+    display: flex;
+    background: var(--main-color);
+    color: black !important
+}
+
+.sideBar .logo{
+    font-size:60px;
+    margin:15px 0;
+}
+
+.sideBar .logo img{
+    width:30%;
+    margin:auto;
+    display:flex;
+    
+}
+
+.sideBar .links ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+    .sideBar .nav-item {
+        padding: 10px;
+        transition: 0.4s;
+        cursor: pointer;
+        width: 100%;
+        border-bottom: 1px solid var(--border-color);
+        font-size: 21px;
+        font-weight: bold;
+    }
+
+        .sideBar .nav-item a {
+            color: black !important;
+        }
+
+    .sideBar .nav-item:hover {
+        background-color: var(--second-color);
+    }
+
+.accordion-item {
+    background-color: var(--main-color);
+}
+.accordion-item  button {
+background:inherit;
+font-size:21px;
+font-weight:bold;
+}
+.accordion-item button:not(.collapsed) {
+    background: var(--main-color);
+}
+
+.accordion-collapse{
+    margin : 0 50px;
+}
+
+    .accordion-collapse ul li {
+        padding: 10px;
+        border-bottom: 1px solid var(--border-color);
+        text-align: center;
+        background: #B8BDB5;
+    }
+
+
+/*    main header style*/
+
+.main-header {
+    background: var(--main-color);
+    padding: 10px 30px;
+    box-shadow: #e0e2db63;
+}
+
+.main-header ul{
+    display:flex;
+    flex-direction:row;
+    justify-content:end;
+}
+
+.main-header ul>*{
+    margin:0 10px;
+}
+
+.renderedBody {
+    overflow-y: scroll;
+    height: calc(100vh - 120px);
+}
+
+
+.accordtion-tender{
+    margin:10px 0;
+}
+
+.header1 {
+    margin-bottom: 10px;
+    /*background-color: #f0f0f0;*/ /* خلفية هادئة للهيدر */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between; /* لوضع العنوان على اليسار والعدد على اليمين */
+    align-items: center;
+    border-bottom: 1px solid #ccc; /* خط تحت الهيدر */
+}
+
+    .header1 h1 {
+        margin: 0;
+        font-size: 28px;
+        color: #333; /* لون النص للعنوان */
+    }
+
+    .header1 p {
+        margin: 0;
+        font-size: 18px;
+        background-color: #d1ecf1; /* خلفية هادئة للعدد */
+        padding: 10px 20px;
+        border-radius: 5px;
+        color: #007bff; /* لون النص للعدد */
+    }

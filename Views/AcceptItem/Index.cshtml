@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Offer>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@if (Model != null && Model.Any())
+{
+    <div class="container-fluid tender-parent text-center  mt-10">
+        <h1 class="tender-header space"><i class="fa-solid fa-arrow-right"></i>The Accept Items</h1>
+        <div class="tenderTable container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <table class="table table-bordered" cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr class="table-pramiry tender-table">
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Desc</th>
+                                <th>OfferID</th>
+                            </tr>
+                        </thead>
+                        @foreach (var item in Model)
+                        {
+                            @foreach (var i in item.alternativeItems)
+                            {
+                                if (i.IsAccept == true)
+                                {
+                                    <tbody>
+                                        <tr>
+                                            <td>@i.Name</td>
+                                            <td>@i.Type</td>
+                                            <td>@i.Description</td>
+                                            <td>@i.OfferId</td>
+                                        </tr>
+                                    </tbody>
+                                }
+                            }
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <partial name="NotDataFoundPartialView" />
+}
+@*  <div class="col-md-6 col-12 col-lg-4">
+                        <div class="card w-100  mb-3">
+                            <a class="btn btn-primary" style="border-radius: 5px 5px 0px 0px;" asp-action="UpdateAccepted" asp-controller="AcceptItem" asp-route-id="@item.id">
+                                <div class="card-header" style="border-bottom: 0;">The Offer</div>
+                            </a>
+                            <a class="btn btn-light" style="border-radius:0px;" asp-action="Details" asp-controller="Offer" asp-route-id="@item.id">
+                                <div class="card-body text-start">
+                                    <h4 class="card-title" style="height:60px"><b>Offer From :</b>  @item.Vendor.Name</h4>
+                                    <h4 class="card-title"><b>Create On : </b> @item.CreateOn</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div> *@

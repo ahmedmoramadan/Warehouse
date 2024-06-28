@@ -1,0 +1,81 @@
+﻿@model ReciveCommittee
+@{
+    ViewData["Title"] = "LastRCCMembers";
+}
+
+@{
+    int rowIndex = 0;
+}
+
+@if (Model != null)
+{
+    if ( Model.receiveprocces != null){
+    <div class="container-fluid tender-parent text-center  mt-10">
+            <h1 class="tender-header"> <i class="fa-solid fa-arrow-right"></i> Current Technical Committee Members</h1>
+            <div class="tenderTable container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                        <form asp-action="ChooseHeadRCCMember">
+                            <table class="table table-bordered" cellspacing="0" cellpadding="0">
+                                <thead>
+                                    <tr class="table-primary">
+                                        <th></th>
+                                        <th>
+                                            Mamber Name
+                                        </th>
+                                        <th>Phone Nember</th>
+                                        <th>Select Head</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var i in Model.Members)
+                                    {
+                                        rowIndex++;
+                                        <tr class="@(rowIndex % 2 == 0 ?  "even-table" :  "odd-table")">
+                                            <td>@rowIndex</td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => i.Member.Name)
+                                            </td>
+                                            <td>@i.Member.PhoneNumber</td>
+                                            <td>
+                                                <input type="radio" name="id" value="@i.Member.Id" required>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <div class="form-group d-flex justify-content-end">
+                                <a value="Close" asp-action="Index" asp-controller="Home" class="btn btn-primary mx-2">Cancel</a>
+                                <input type="submit" class="btn btn-primary" />
+                            </div>
+                        </form>
+                </div>
+            </div>
+            <div class="form-group d-flex justify-content-end pt-2">
+                <a   class="btn btn-danger m-1" asp-controller="home" asp-action="index">OK</a>
+            </div>
+        </div>
+        </div>
+    }
+    else
+    {
+        <div class="container-fluid d-flex .warning text-center  ">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <div class="alert alert-dismissible alert-warning SpaceWarning">
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            <h4 class="alert-heading">Warning!</h4>
+                            <p style="direction:rtl"> not Recive Procces yet </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <partial name="_CommitteePartialView"></partial>
+}
+

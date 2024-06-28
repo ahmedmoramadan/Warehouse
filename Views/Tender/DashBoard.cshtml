@@ -1,0 +1,152 @@
+﻿@model IEnumerable<Tender>
+
+@{
+    ViewData["Title"] = "DashBoard";
+}
+
+@{
+    int rowIndex = 0;
+    int c = 0;
+    DateOnly? MYdate = null;
+    int t = 0;
+    if ( Model.Any())
+    {
+         t = Model.FirstOrDefault().EntityId;
+    }
+    int tt = 1;
+}
+
+
+<div class="container-fluid tender-parent text-center  mt-10">
+    <div class="row mb-2">
+        <div class="header1 ">
+            @foreach(var i in Model)
+            {
+                if(t!= i.EntityId)
+                {
+                    tt++;
+                }
+            }
+           
+            <h1> ON-GOING TENDERS LIST  @if (tt == 1 && t != 0 && @Model.Where(x => x.Finitished != true).Count() !=0)
+                {
+                    @Model.FirstOrDefault()!.Entity.Name
+                }</h1>
+            <p>Going tenders : @Model.Where(x => x.Finitished != true).Count()</p>
+            @if (tt != 1 || !Model.Any())
+            {
+                <form class="form-inline" asp-action="SearchNET">
+                    <div class="d-flex">
+                        <input type="search" name="term" placeholder="Search" asp-route-id="0" class="form-control mr-sm-2">
+                        <button class="btn btn-outline-success my-2 my-sm-0"> <i class="bi bi-search"></i> </button>
+                    </div>
+                </form>
+            }
+            else
+            {
+                <form class="form-inline" asp-action="SearchNET" asp-route-id="@t">
+                    <div class="d-flex">
+                        <input type="search" name="term" placeholder="Search" class="form-control mr-sm-2">
+                        <button class="btn btn-outline-success my-2 my-sm-0"> <i class="bi bi-search"></i> </button>
+                    </div>
+                </form>
+            }
+        </div>
+    </div>
+    <div class="tenderTable container">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <table class="table table-bordered" cellspacing="0" cellpadding="0">
+                    <thead>
+                        <tr class="table-pramiry tender-table">
+                            <th></th>
+                            <th>Title</th>
+                            <th>
+                                Specifiction And Pricing Committee
+                            </th>
+                            <th>Technical Committee</th>
+                            <th>
+                                Selection Committee
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            if (!item.Finitished)
+                            {
+                                rowIndex++;
+                                <tr class="@(rowIndex % 2 == 0 ?   "odd-table" : "even-table")">
+                                    <td>@rowIndex</td>
+                                    <td>
+                                        <dl>
+                                            <dt>@item.Name</dt>
+                                            <dd style="font-size: small; margin-left:15px;">@item.DateOnly</dd>
+                                        </dl>
+                                    </td>
+                                    <td>
+                                        @if (item.RequiredItems != null && item.RequiredItems.All(row => !string.IsNullOrWhiteSpace(row.Description)) && !(item.RequiredItems!.Count == 0))
+                                        {
+                                            <dl>
+                                                <dt class="com">Completed</dt>
+                                                <dd style="font-size: small; margin-left:15px;">@item.RequiredItems.LastOrDefault()!.DATESAndP</dd>
+                                            </dl>
+                                        }
+                                        else
+                                        {
+                                            <p>----------</p>
+                                        }
+                                    </td>
+                                    <td>
+                                        @if (item.RequiredItems != null && item.RequiredItems.All(row => !string.IsNullOrWhiteSpace(row.Description)) && !(item.RequiredItems!.Count == 0))
+                                        {
+                                            MYdate = null;
+                                            @foreach (var i in item.RequiredItems)
+                                            {
+                                                if (i.DATEName != null && i.IsValid)
+                                                {
+                                                    c++;
+                                                    MYdate = i.DATEName;
+                                                }
+                                            }
+                                            if (MYdate != null && c > 0)
+                                            {
+                                                <dl>
+                                                    <dt class="com">Completed</dt>
+                                                    <dd style="font-size: small; margin-left:15px;">@MYdate </dd>
+                                                </dl>
+                                            }
+                                            else
+                                            {
+                                                <p>----------</p>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <p>----------</p>
+                                        }
+
+                                    </td>
+                                    <td>
+                                        @if (item.Finitished)
+                                        {
+                                            <dl>
+                                                <dt class="com">Completed</dt>
+                                                <dd style="font-size: small; margin-left:15px;">@item.DateFinitished</dd>
+                                            </dl>
+                                        }
+                                        else
+                                        {
+                                            <p>----------</p>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+   

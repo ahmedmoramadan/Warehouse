@@ -1,0 +1,60 @@
+﻿@model SelectionCommittee
+
+@{
+    ViewData["Title"] = "LastSLCMembers";
+}
+@{
+    int rowIndex = 0;
+}
+
+@if (Model != null )
+{
+    <div class="container-fluid tender-parent text-center  mt-10">
+        <h1 class="tender-header"> <i class="fa-solid fa-arrow-right"></i> Current Selection Committee Members</h1>
+        <div class="tenderTable container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <form asp-action="ChooseHeadSLCMember" asp-route-tid="@Model.TenderId">
+                        <table class="table table-bordered" cellspacing="0" cellpadding="0">
+                            <thead>
+                                <tr class="table-primary">
+                                    <th></th>
+                                    <th>
+                                        Mamber Name
+                                    </th>
+                                    <th>Phone Nember</th>
+                                    <th>Select Head</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var i in Model.Members)
+                                {
+                                    rowIndex++;
+                                    <tr class="@(rowIndex % 2 == 0 ?  "even-table" :  "odd-table")">
+                                        <td>@rowIndex</td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => i.Member.Name)
+                                        </td>
+                                        <td>@i.Member.PhoneNumber</td>
+                                        <td>
+                                            <input type="radio" name="id" value="@i.Member.Id" required>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <div class="form-group d-flex justify-content-end">
+                            <a value="Close" asp-action="Index" asp-controller="Home" class="btn btn-primary mx-2">Cancel</a>
+                            <input type="submit" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <partial name="_CommitteePartialView"></partial>
+    
+}
